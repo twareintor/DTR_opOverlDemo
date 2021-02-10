@@ -1,0 +1,34 @@
+# Project: TEST__129837491723492
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = main.o animal.o shelter.o
+LINKOBJ  = main.o animal.o shelter.o
+LIBS     = -L"D:/KIT.PORT/OrwellDev-CppPortable_5.11/App/Dev-Cpp/MinGW64/lib" -L"D:/KIT.PORT/OrwellDev-CppPortable_5.11/App/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -g3
+INCS     = -I"D:/KIT.PORT/OrwellDev-CppPortable_5.11/App/Dev-Cpp/MinGW64/include" -I"D:/KIT.PORT/OrwellDev-CppPortable_5.11/App/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/KIT.PORT/OrwellDev-CppPortable_5.11/App/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"D:/KIT.PORT/OrwellDev-CppPortable_5.11/App/Dev-Cpp/MinGW64/include" -I"D:/KIT.PORT/OrwellDev-CppPortable_5.11/App/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/KIT.PORT/OrwellDev-CppPortable_5.11/App/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"D:/KIT.PORT/OrwellDev-CppPortable_5.11/App/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = TEST__129837491723492.exe
+CXXFLAGS = $(CXXINCS) -g3 -std=c++11
+CFLAGS   = $(INCS) -g3 -std=c++11
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+animal.o: animal.cpp
+	$(CPP) -c animal.cpp -o animal.o $(CXXFLAGS)
+
+shelter.o: shelter.cpp
+	$(CPP) -c shelter.cpp -o shelter.o $(CXXFLAGS)
